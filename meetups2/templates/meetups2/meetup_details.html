@@ -10,29 +10,31 @@
 {% endblock%}
 
 {% block main_heading  %}  {{meetup_title}} {% endblock%}
-
-
 {% block body  %}
-        <article>
-           <img src="" alt=""> 
-           <section id="location">
-            <h2>Meetup Location</h2>
-            <address>This Meetup takes place in <span>LOCATION</span>(ADDRESS)</address>
-           </section>
+{% if meetup_found %}
+    <article>
+        <img src="" alt=""> 
+        <section id="location">
+        <h2>Meetup Location</h2>
+        <address>This Meetup takes place in <span>LOCATION</span>(ADDRESS)</address>
+        </section>
 
-           <section id="details">
-            <h2> What's this meetup About?</h2>
-            <p>{{meetup_description}}</p>
-            <footer>
-                <p> Need more details?please <a href="">contant the organizer </a>(but don't spam us)  </p>
-            </footer>
-           </section>
+        <section id="details">
+        <h2> What's this meetup About?</h2>
+        <p>{{meetup_description}}</p>
+        <footer>
+            <p> Need more details?please <a href="">contant the organizer </a>(but don't spam us)  </p>
+        </footer>
+        </section>
 
-           <section id="regestrision">
-            <h2>Join us</h2>
-            FORM
-           </section>
-        </article>
+        <section id="regestrision">
+        <h2>Join us</h2>
+        FORM
+        </section>
+    </article>
+{%else%}
+<p> no meetups found, sorry</p>
+{% endif%}
 {% endblock %}
 
 
